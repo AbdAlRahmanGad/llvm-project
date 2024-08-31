@@ -2208,7 +2208,8 @@ ValueObjectSP ValueObject::GetValueForExpressionPath(
       auto address_of_valobj_sp_or_err = ret_val->AddressOf(error);
       if (!address_of_valobj_sp_or_err)
         LLDB_LOG_ERROR(GetLog(LLDBLog::Object),
-                       address_of_valobj_sp_or_err.takeError(), "unable to get the address of the value object");
+                       address_of_valobj_sp_or_err.takeError(),
+                       "unable to get the address of the value object");
       else
         final_value = *address_of_valobj_sp_or_err;
       if (error.Fail() || !final_value.get()) {

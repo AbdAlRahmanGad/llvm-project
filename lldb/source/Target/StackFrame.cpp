@@ -1076,7 +1076,8 @@ ValueObjectSP StackFrame::GetValueForVariableExpressionPath(
       auto address_of_valobj_sp_or_err = valobj_sp->AddressOf(error);
       if (!address_of_valobj_sp_or_err)
         LLDB_LOG_ERROR(GetLog(LLDBLog::Object),
-                       address_of_valobj_sp_or_err.takeError(), "unable to get the address of the value object");
+                       address_of_valobj_sp_or_err.takeError(),
+                       "unable to get the address of the value object");
       else
         address_of_valobj_sp = *address_of_valobj_sp_or_err;
       valobj_sp = address_of_valobj_sp;
