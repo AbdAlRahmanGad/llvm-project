@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - 'release/**'
+      - 'tests/**'
     paths:
       - 'lldb/**'
       - '.github/workflows/lldb-tests.yml'
@@ -32,7 +33,7 @@ concurrency:
 
 jobs:
   build_lldb:
-    if: github.repository_owner == 'llvm'
+    if: github.repository_owner == 'AbdAlRahmanGad'
     name: Build lldb
     uses: ./.github/workflows/llvm-project-tests.yml
     with:
